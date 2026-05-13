@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+}
+
+/* Open Button */
+
+.open-btn {
+    border: none;
+    padding: 14px 24px;
+    border-radius: 12px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.open-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* Overlay */
+
+.modal-overlay {
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* opacity:0; */
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease;
+
+    padding: 20px;
+}
+
+/* Active Overlay */
+
+.modal-overlay.active {
+    opacity:1;
+    visibility: visible;
+}
+
+/* Modal */
+
+.modal {
+
+    width: min(420px, 100%);
+    background: white;
+
+    border-radius: 20px;
+    padding: 28px;
+
+    position: relative;
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.3);
+
+    /* Initial State */
+    opacity: 0;
+
+    transform:
+        translateY(-40px) scale(0.9);
+
+    transform-origin: center;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+}
+
+/* Active Modal */
+
+.modal-overlay.active .modal {
+
+    opacity: 1;
+
+    transform:
+        translateY(0) scale(1);
+}
+
+/* Content */
+
+.modal h2 {
+    margin-bottom: 12px;
+}
+
+.modal p {
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Close Button */
+
+.close-btn {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    border: none;
+    background: none;
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+    transform: scale(1.15);
+}
