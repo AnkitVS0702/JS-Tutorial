@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+}
+
+.card {
+    width: 320px;
+    background: #1e1e1e;
+    border-radius: 12px;
+}
+
+.image {
+    /* background-color: aliceblue; */
+    width: 100%;
+    height: 250px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+.title {
+    /* background-color: green; */
+    width: 100%;
+    height: 50px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.text {
+    width: 100%;
+    height: 25px;
+    margin-bottom: 10px;
+    /* background-color: pink; */
+    border-radius: 6px;
+}
+
+.short {
+    width: 70%;
+    overflow: hidden;
+}
+
+.skeleton {
+    position: relative;
+    overflow:hidden;
+    background: #2a2a2a;
+}
+
+/* Shimmer Layer  */
+
+.skeleton::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.15),
+        transparent
+    );
+    animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        left: 100%;
+    }
+}
