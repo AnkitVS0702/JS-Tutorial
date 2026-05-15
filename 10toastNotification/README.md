@@ -27,4 +27,6 @@ Looping: Can loop infinitely (animation-iteration-count: infinite).
 
 ## New concepts learned
  line-height: 50px;
+
+ Buttons of accepted , error and warning taken from Fontawesome free kit
  
